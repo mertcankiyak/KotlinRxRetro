@@ -7,6 +7,6 @@ import retrofit2.http.GET
 
 interface NewsAPI {
 
-    @GET("v2/top-headlines?country=us&apiKey=0f290cdcaef347b9b81783f315d62ac6")
+    @GET("v2/top-headlines?country=us&apiKey=NEWS-API-KEY")
     fun getNews(): Observable<NewsAPIJSON>
 }
