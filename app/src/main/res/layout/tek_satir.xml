@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="news"
+            type="com.kodless.kotlinnews.model.Article" />
+        <variable
+            name="listener"
+            type="com.kodless.kotlinnews.adapter.NewsClickListener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{listener::onNewsClick}">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvUUid"
+            android:visibility="gone"
+            android:text="@{String.valueOf(news.uuid)}">
+        </TextView>
+        <TextView
+            android:id="@+id/tvHaberBaslik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="@{news.title}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <TextView
+            android:id="@+id/tvHaberOzet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="20dp"
+            android:text="@{news.description}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="20dp" />
+    </LinearLayout>
+</layout>
