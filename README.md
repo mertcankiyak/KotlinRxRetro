@@ -1,7 +1,7 @@
 # KotlinRxRetro
 Kotlin News App
 
-# I used;
+# The ones i use;
 - RxJava
 - Retrofit
 - Livedata
